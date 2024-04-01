@@ -6,6 +6,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.stream.Stream;
 
 public class App {
     public static void main(String[] args) throws IOException {
@@ -21,30 +22,21 @@ public class App {
         try {
             String[] cab = trataCab(br);
 
+
             String auxLinhas = br.readLine();
             while(auxLinhas!=null){
 
-                String[] auxArr = auxLinhas.split(",");
-
-
+                String[] auxArr = auxLinhas.replace("\"","").trim().split(",");
 
                 Municipio nAux = new Municipio();
                 nAux.insere(cab,auxArr);
                 muniList.add(nAux);
                 auxLinhas = br.readLine();
-
             }
 
             muniList.stream()
-                    .filter(cid -> cid.getDados().get("1995") != "SemDados")
-                    .forEach(cid ->{
-                        System.out.print(cid.getMunicipio());
-                                var aux = cid.getDados();
-                                for(String key : aux.keySet()){
-                                    System.out.print("| "+ key + " " + aux.get(key));
-                                }
-                        System.out.println("\n");
-                            });
+                    .filter(mun -> mun.getMunicipio().equals("Montenegro"))
+                    .forEach(Municipio::todosOsAnos);
 
         }catch (IOException e){
             System.out.println("erro");
@@ -55,14 +47,17 @@ public class App {
 
 
 public static String[] trataCab(BufferedReader br)throws IOException {
-    String[] cabecalho = br.readLine().split(",");
-    for (int c = 0; c < cabecalho.length; c++) {
-        if (cabecalho[c].length() > 63) {
-            cabecalho[c] = cabecalho[c].substring(55, 59);
-        }
-}
+
+        String cabLimpo =  br.readLine().replace("\""," ").trim();
+    System.out.println(cabLimpo);
+        String[] cabecalho = cabLimpo.split(",");
+            for (int c = 0; c < cabecalho.length; c++) {
+                if (cabecalho[c].length() > 63) {
+                cabecalho[c] = cabecalho[c].substring(55, 59);
+                }
+            }
     return cabecalho;
-}
+    }
 }
 
 

@@ -13,7 +13,7 @@ public class Municipio {
         this.municipio = hectares[0];
 
         for(int c =4;c<cab.length;c++){
-            var testaSemDados = hectares[c].substring(1, (hectares[c].length()-1) );
+            var testaSemDados = hectares[c];
 
             if(testaSemDados.equals("...") || testaSemDados.equals("-")){
                 dados.put(cab[c], "SemDados");
