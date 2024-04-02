@@ -1,4 +1,6 @@
 import cidades.Municipio;
+import relatorios.PaginaHtml;
+import relatorios.Relatorio;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -34,9 +36,17 @@ public class App {
                 auxLinhas = br.readLine();
             }
 
-            muniList.stream()
-                    .filter(mun -> mun.getMunicipio().equals("Montenegro"))
-                    .forEach(Municipio::todosOsAnos);
+            //todo testes
+            Municipio teste = muniList.stream()
+                    .filter(ele -> ele.getMunicipio().equals("São Borja"))
+                    .findAny().get();
+
+            Relatorio rel = new Relatorio();
+            rel.criaDiretorio();
+
+            PaginaHtml testehtml = new PaginaHtml();
+            testehtml.setMunicipio(teste);
+            testehtml.criaPagina();
 
         }catch (IOException e){
             System.out.println("erro");
