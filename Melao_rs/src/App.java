@@ -3,12 +3,9 @@ import relatorios.PaginaHtml;
 import relatorios.Relatorio;
 
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
-import java.util.stream.Stream;
 
 public class App {
     public static void main(String[] args) throws IOException {
@@ -38,15 +35,13 @@ public class App {
 
             //todo testes
             Municipio teste = muniList.stream()
-                    .filter(ele -> ele.getMunicipio().equals("São Borja"))
+                    .filter(ele -> ele.getMunicipio().equals("Agudo"))
                     .findAny().get();
 
             Relatorio rel = new Relatorio();
             rel.criaDiretorio();
 
-            PaginaHtml testehtml = new PaginaHtml();
-            testehtml.setMunicipio(teste);
-            testehtml.criaPagina();
+
 
         }catch (IOException e){
             System.out.println("erro");

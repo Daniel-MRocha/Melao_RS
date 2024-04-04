@@ -22,20 +22,13 @@ public class Municipio {
             }
         }
     }
-
-
     public String getMunicipio() {
         return municipio;
     }
     public Map<String,String> getDados(){
         return this.dados;
     }
-    public void todosOsAnos(){
-        System.out.println("Municipio de " + this.municipio);
 
-        for(String key : dados.keySet()){
-            System.out.println( key +" : " + dados.get(key) );
-        }
     }
 
-}
+
