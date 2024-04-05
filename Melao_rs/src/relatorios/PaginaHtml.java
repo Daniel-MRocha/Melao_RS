@@ -10,56 +10,58 @@ import java.text.DecimalFormat;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class PaginaHtml implements I_htmlBuilder{
+public class PaginaHtml{
 
-    private String municipio ;
-    private Map<String,String> dados;
+    private String municipio;
+    private Map<String, String> dados;
     private String estruturaHtml;
 
 
-    public void setMunicipio(Municipio mun){
+    public void setMunicipio(Municipio mun) {
         this.municipio = mun.getMunicipio();
         this.dados = mun.getDados();
     }
-    public void criaArquivoPagina(){
 
-        Path caminho = Path.of("C:\\Users\\Daniel M\\Documents\\DataCienceRs\\Melao_rs\\Relatorio\\"+ municipio + ".html");
+    public void criaArquivoPagina() {
+
+        Path caminho = Path.of("C:\\Users\\Daniel M\\Documents\\DataCienceRs\\Melao_rs\\Relatorio\\" + municipio + ".html");
         try {
             Files.createFile(caminho);
             montaHtml();
             FileWriter fw = new FileWriter(caminho.toFile());
             fw.write(estruturaHtml);
             fw.close();
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Erro na criação do arquivo");
             System.out.println(e);
         }
     }
-    public String dadosDispostos(){
+
+    public String dadosDispostos() {
         StringBuffer sb = new StringBuffer();
-        for(String ano : dados.keySet()){
-            if(dados.get(ano).equals("SemDados")){
+        for (String ano : dados.keySet()) {
+            if (dados.get(ano).equals("SemDados")) {
                 sb.append("""
-                    <article class="conjunto">
-                    """
-                        +"<span class=\"ano\">"+ano+"</span><span class=\"hectares\">"+"-"+"</span>"+
+                        <article class="conjunto">
+                        """
+                        + "<span class=\"ano\">" + ano + "</span><span class=\"hectares\">" + "-" + "</span>" +
                         """           
-                                   </article>
-                       """);
-            }else{
+                                            </article>
+                                """);
+            } else {
                 sb.append("""
-                    <article class="conjunto">
-                    """
-                        +"<span class=\"ano\">"+ano+"</span><span class=\"hectares\">"+dados.get(ano)+"</span>"+
+                        <article class="conjunto">
+                        """
+                        + "<span class=\"ano\">" + ano + "</span><span class=\"hectares\">" + dados.get(ano) + "</span>" +
                         """           
-                                   </article>
-                       """);
+                                            </article>
+                                """);
             }
         }
         return sb.toString();
     }
 
-    public void montaHtml(){
+    public void montaHtml() {
         this.estruturaHtml = """
                 <!DOCTYPE html>
                 <html lang="pt-br">
@@ -68,39 +70,40 @@ public class PaginaHtml implements I_htmlBuilder{
                     <meta name="viewport" content="width=device-width, initial-scale=1.0">
                     <meta name="Author" content="Daniel Machado da rocha">
                     """
-                    +"<title>"+this.municipio+"</title>"+
-                   """ 
-                </head>
-                """
-        + montaCss() +
+                + "<title>" + this.municipio + "</title>" +
+                """ 
+                        </head>
+                        """
+                + montaCss() +
 
                 """
-                 <body>
-                        <main>
+                        <body>
+                               <main>
+                               """
+                + "<Span id=\"municipio\"><h2>" + this.municipio + "</h2></Span>" +
+                """
+                                   <h4>Dados da cultura de melão no período de 1974 à 2021</h4>
+                                   <section id="dados">
                         """
-                            +"<Span id=\"municipio\"><h2>"+this.municipio+"</h2></Span>"+
+                + dadosDispostos() +
                 """
-                            <h4>Dados da cultura de melão no período de 1974 à 2021</h4>
-                            <section id="dados">
-                 """
-        +dadosDispostos() +
+                                 </section>
+                                 <footer>
+                                        <fieldset>
+                                                <legend>Dados estatísticos</legend>
+                        """
+                + montaFooter() +
                 """
-                         </section>
-                         <footer>
-                                <fieldset>
-                                        <legend>Dados estatísticos</legend>
-                """
-                                  +  montaFooter() +
-                """
-                                </fieldset>
-                         </footer>
-                            
-                            </main>
-                        </body>
-                        </html>
-                """;
+                                        </fieldset>
+                                 </footer>
+                                    
+                                    </main>
+                                </body>
+                                </html>
+                        """;
     }
-    public String montaCss(){
+
+    public String montaCss() {
         return """
                 <style>
                     *{
@@ -212,14 +215,15 @@ public class PaginaHtml implements I_htmlBuilder{
                 </style>
                 """;
     }
-    public String montaFooter(){
+
+    public String montaFooter() {
         StringBuffer sb = new StringBuffer();
         DecimalFormat df = new DecimalFormat("#.#");
 
         var totalHectares = dados.values().stream()
                 .filter(ele -> !ele.equals("SemDados"))
                 .map(Integer::parseInt)
-                .reduce((a,b)-> a+b)
+                .reduce((a, b) -> a + b)
                 .get();
 
         var estatisticas = dados.values().stream()
@@ -229,25 +233,11 @@ public class PaginaHtml implements I_htmlBuilder{
 
         var media = estatisticas.getAverage();
 
-        sb.append("<span class=\"estatisticaLabel\">Quantidade total de hectares<span class=\"estatisticas\">"+estatisticas.getSum()+"</span></span>");
-        sb.append("<span class=\"estatisticaLabel\">Maior quantidade em 1 ano<span class=\"estatisticas\">"+estatisticas.getMax()+"</span></span>");
-        sb.append("<span class=\"estatisticaLabel\">Menor quantidade em 1 ano<span class=\"estatisticas\">"+estatisticas.getMin()+"</span></span>");
-        sb.append("<span class=\"estatisticaLabel\">Media (em anos plantados)<span class=\"estatisticas\">"+df.format(media)+"</span></span>");
+        sb.append("<span class=\"estatisticaLabel\">Quantidade total de hectares<span class=\"estatisticas\">" + estatisticas.getSum() + "</span></span>");
+        sb.append("<span class=\"estatisticaLabel\">Maior quantidade em 1 ano<span class=\"estatisticas\">" + estatisticas.getMax() + "</span></span>");
+        sb.append("<span class=\"estatisticaLabel\">Menor quantidade em 1 ano<span class=\"estatisticas\">" + estatisticas.getMin() + "</span></span>");
+        sb.append("<span class=\"estatisticaLabel\">Media (em anos plantados)<span class=\"estatisticas\">" + df.format(media) + "</span></span>");
 
         return sb.toString();
     }
-
-    @Override
-    public void setDeMunicipio(Municipio municipio) {
-        this.municipio = municipio.getMunicipio();
-        this.dados = municipio.getDados();
-    }
-
-    @Override
-    public void criaPaginanoPool() {
-        System.out.println("0i");
-    }
-    }
-
-
-
+}

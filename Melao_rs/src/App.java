@@ -42,7 +42,6 @@ public class App {
             rel.criaDiretorio();
 
 
-
         }catch (IOException e){
             System.out.println("erro");
         }
