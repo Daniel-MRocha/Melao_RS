@@ -10,8 +10,11 @@ import java.util.List;
 public class App {
     public static void main(String[] args) throws IOException {
 
+        long agora = System.currentTimeMillis();
+
         System.out.println("Dados do melão");
         System.out.println("--------------");
+        System.out.println("Gerando relatórios em html---------||");
 
         Path arquivo = Path.of("src/recurso/dee-1738_melao.csv");
         BufferedReader br = new BufferedReader(new FileReader(arquivo.toFile()));
@@ -33,17 +36,18 @@ public class App {
                 auxLinhas = br.readLine();
             }
 
-            //todo testes
-            Municipio teste = muniList.stream()
-                    .filter(ele -> ele.getMunicipio().equals("Agudo"))
-                    .findAny().get();
+            Relatorio montaDiretorio = new Relatorio();
+            montaDiretorio.criaDiretorio();
 
-            Relatorio rel = new Relatorio();
-            rel.criaDiretorio();
+            muniList.stream()
+                    .forEach(municipio ->{
+                        PaginaHtml pg = new PaginaHtml();
+                        pg.setMunicipio(municipio);
+                        pg.criaArquivoPagina();
+                    });
 
-            PaginaHtml pg = new PaginaHtml();
-            pg.setMunicipio(teste);
-            pg.criaArquivoPagina();
+            long fim = System.currentTimeMillis();
+            System.out.println("Operação concluida em " + (fim - agora) + " milisegundos");
 
         }catch (IOException e){
             System.out.println("erro");
@@ -56,7 +60,6 @@ public class App {
 public static String[] trataCab(BufferedReader br)throws IOException {
 
         String cabLimpo =  br.readLine().replace("\""," ").trim();
-    System.out.println(cabLimpo);
         String[] cabecalho = cabLimpo.split(",");
             for (int c = 0; c < cabecalho.length; c++) {
                 if (cabecalho[c].length() > 63) {

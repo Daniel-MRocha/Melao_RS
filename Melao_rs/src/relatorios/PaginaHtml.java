@@ -24,7 +24,8 @@ public class PaginaHtml{
 
     public void criaArquivoPagina() {
 
-        Path caminho = Path.of("C:\\Users\\Daniel M\\Documents\\DataCienceRs\\Melao_rs\\Relatorio\\" + municipio + ".html");
+        Path caminho = Path.of(".\\Relatorio\\" + municipio + ".html");
+
         try {
             Files.createFile(caminho);
             montaHtml();
