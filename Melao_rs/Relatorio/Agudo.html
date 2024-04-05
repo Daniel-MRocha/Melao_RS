@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Author" content="Daniel Machado da rocha">
+<title>Agudo</title></head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+
+        &::before{
+        content: '';
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        background-image: url(../src/recurso/melaoBackground2.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: .25;
+        }
+    }
+
+    main{
+        margin-top: 20px;
+        border: 3px solid green;
+        border-radius: 5px;
+        width: 60vw;
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+    section{
+        position: relative;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(6,1fr);
+        gap: 12px;
+        margin: 10px;
+    }
+
+    #municipio > h2{
+        text-decoration: dotted;
+        color: rgb(21, 103, 21);
+    }
+    .conjunto{
+        border: 3px solid rgb(7, 91, 7);
+        border-radius: 3px;
+        background-color: rgb(41, 152, 41);
+        width: 100px;
+        height: 30px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .ano{
+        color: whitesmoke;
+        margin-left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+         position: relative;
+         width: 50%;
+    }
+    .hectares{
+        background-color: rgb(191, 215, 194);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 50%;
+    }
+
+     footer{
+             position: relative;
+             width: 100%;
+             height: 100%;
+             display: flex;
+             flex-direction: column;
+             padding-top: 5px;
+             padding-left: 5px;
+             font-size: large;
+             font-weight: 700;
+     }
+         .estatisticaLabel{
+             background-color: rgb(138, 173, 142);
+             width: 240px;
+             height: 20px;
+             border-radius: 3px;
+             font-size: medium;
+             font-weight: 300;
+             font-family: 'Times New Roman', Times, serif;
+             margin: 7px;
+             display: flex;
+             padding-left: 7px;
+             flex-direction: row;
+             justify-content: space-between;
+         }
+         .estatisticas{
+             color: bisque;
+             margin-right: 3px;
+         }
+</style>
+<body>
+       <main>
+<Span id="municipio"><h2>Agudo</h2></Span>           <h4>Dados da cultura de melão no período de 1974 à 2021</h4>
+           <section id="dados">
+<article class="conjunto">
+<span class="ano">1974</span><span class="hectares">-</span>            </article>
+<article class="conjunto">
+<span class="ano">1975</span><span class="hectares">-</span>            </article>
+<article class="conjunto">
+<span class="ano">1976</span><span class="hectares">-</span>            </article>
+<article class="conjunto">
+<span class="ano">1977</span><span class="hectares">-</span>            </article>
+<article class="conjunto">
+<span class="ano">1978</span><span class="hectares">-</span>            </article>
+<article class="conjunto">
+<span class="ano">1979</span><span class="hectares">-</span>            </article>
+<article class="conjunto">
+<span class="ano">1980</span><span class="hectares">-</span>            </article>
+<article class="conjunto">
+<span class="ano">1981</span><span class="hectares">-</span>            </article>
+<article class="conjunto">
+<span class="ano">1982</span><span class="hectares">-</span>            </article>
+<article class="conjunto">
+<span class="ano">1983</span><span class="hectares">-</span>            </article>
+<article class="conjunto">
+<span class="ano">1984</span><span class="hectares">-</span>            </article>
+<article class="conjunto">
+<span class="ano">1985</span><span class="hectares">-</span>            </article>
+<article class="conjunto">
+<span class="ano">1986</span><span class="hectares">-</span>            </article>
+<article class="conjunto">
+<span class="ano">1987</span><span class="hectares">-</span>            </article>
+<article class="conjunto">
+<span class="ano">1988</span><span class="hectares">10</span>            </article>
+<article class="conjunto">
+<span class="ano">1989</span><span class="hectares">9</span>            </article>
+<article class="conjunto">
+<span class="ano">1990</span><span class="hectares">9</span>            </article>
+<article class="conjunto">
+<span class="ano">1991</span><span class="hectares">10</span>            </article>
+<article class="conjunto">
+<span class="ano">1992</span><span class="hectares">10</span>            </article>
+<article class="conjunto">
+<span class="ano">1993</span><span class="hectares">8</span>            </article>
+<article class="conjunto">
+<span class="ano">1994</span><span class="hectares">8</span>            </article>
+<article class="conjunto">
+<span class="ano">1995</span><span class="hectares">8</span>            </article>
+<article class="conjunto">
+<span class="ano">1996</span><span class="hectares">1</span>            </article>
+<article class="conjunto">
+<span class="ano">1997</span><span class="hectares">8</span>            </article>
+<article class="conjunto">
+<span class="ano">1998</span><span class="hectares">8</span>            </article>
+<article class="conjunto">
+<span class="ano">1999</span><span class="hectares">8</span>            </article>
+<article class="conjunto">
+<span class="ano">2000</span><span class="hectares">8</span>            </article>
+<article class="conjunto">
+<span class="ano">2001</span><span class="hectares">3</span>            </article>
+<article class="conjunto">
+<span class="ano">2002</span><span class="hectares">3</span>            </article>
+<article class="conjunto">
+<span class="ano">2003</span><span class="hectares">3</span>            </article>
+<article class="conjunto">
+<span class="ano">2004</span><span class="hectares">-</span>            </article>
+<article class="conjunto">
+<span class="ano">2005</span><span class="hectares">-</span>            </article>
+<article class="conjunto">
+<span class="ano">2006</span><span class="hectares">-</span>            </article>
+<article class="conjunto">
+<span class="ano">2007</span><span class="hectares">-</span>            </article>
+<article class="conjunto">
+<span class="ano">2008</span><span class="hectares">-</span>            </article>
+<article class="conjunto">
+<span class="ano">2009</span><span class="hectares">-</span>            </article>
+<article class="conjunto">
+<span class="ano">2010</span><span class="hectares">-</span>            </article>
+<article class="conjunto">
+<span class="ano">2011</span><span class="hectares">-</span>            </article>
+<article class="conjunto">
+<span class="ano">2012</span><span class="hectares">-</span>            </article>
+<article class="conjunto">
+<span class="ano">2013</span><span class="hectares">-</span>            </article>
+<article class="conjunto">
+<span class="ano">2014</span><span class="hectares">2</span>            </article>
+<article class="conjunto">
+<span class="ano">2015</span><span class="hectares">3</span>            </article>
+<article class="conjunto">
+<span class="ano">2016</span><span class="hectares">3</span>            </article>
+<article class="conjunto">
+<span class="ano">2017</span><span class="hectares">3</span>            </article>
+<article class="conjunto">
+<span class="ano">2018</span><span class="hectares">3</span>            </article>
+<article class="conjunto">
+<span class="ano">2019</span><span class="hectares">3</span>            </article>
+<article class="conjunto">
+<span class="ano">2020</span><span class="hectares">3</span>            </article>
+<article class="conjunto">
+<span class="ano">2021</span><span class="hectares">3</span>            </article>
+         </section>
+         <footer>
+                <fieldset>
+                        <legend>Dados estatísticos</legend>
+<span class="estatisticaLabel">Quantidade total de hectares<span class="estatisticas">137</span></span><span class="estatisticaLabel">Quantidade de anos cultivados<span class="estatisticas">24</span></span><span class="estatisticaLabel">Maior quantidade em 1 ano<span class="estatisticas">10</span></span><span class="estatisticaLabel">Menor quantidade em 1 ano<span class="estatisticas">1</span></span><span class="estatisticaLabel">Media (em anos plantados)<span class="estatisticas">5,7</span></span>                </fieldset>
+         </footer>
+
+            </main>
+        </body>
+        </html>

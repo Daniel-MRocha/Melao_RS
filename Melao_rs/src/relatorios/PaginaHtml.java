@@ -220,11 +220,9 @@ public class PaginaHtml{
         StringBuffer sb = new StringBuffer();
         DecimalFormat df = new DecimalFormat("#.#");
 
-        var totalHectares = dados.values().stream()
+        var anosCultivados = dados.values().stream()
                 .filter(ele -> !ele.equals("SemDados"))
-                .map(Integer::parseInt)
-                .reduce((a, b) -> a + b)
-                .get();
+                .count();
 
         var estatisticas = dados.values().stream()
                 .filter(ano -> !ano.equals("SemDados"))
@@ -234,6 +232,7 @@ public class PaginaHtml{
         var media = estatisticas.getAverage();
 
         sb.append("<span class=\"estatisticaLabel\">Quantidade total de hectares<span class=\"estatisticas\">" + estatisticas.getSum() + "</span></span>");
+        sb.append("<span class=\"estatisticaLabel\">Quantidade de anos cultivados<span class=\"estatisticas\">" + anosCultivados + "</span></span>");
         sb.append("<span class=\"estatisticaLabel\">Maior quantidade em 1 ano<span class=\"estatisticas\">" + estatisticas.getMax() + "</span></span>");
         sb.append("<span class=\"estatisticaLabel\">Menor quantidade em 1 ano<span class=\"estatisticas\">" + estatisticas.getMin() + "</span></span>");
         sb.append("<span class=\"estatisticaLabel\">Media (em anos plantados)<span class=\"estatisticas\">" + df.format(media) + "</span></span>");
@@ -242,4 +241,4 @@ public class PaginaHtml{
     }
 
 }
-}
+

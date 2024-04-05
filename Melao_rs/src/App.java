@@ -41,6 +41,9 @@ public class App {
             Relatorio rel = new Relatorio();
             rel.criaDiretorio();
 
+            PaginaHtml pg = new PaginaHtml();
+            pg.setMunicipio(teste);
+            pg.criaArquivoPagina();
 
         }catch (IOException e){
             System.out.println("erro");
