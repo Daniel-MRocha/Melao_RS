@@ -238,16 +238,13 @@ public class PaginaHtml implements I_htmlBuilder{
     }
 
     @Override
-    public void setDeMunicipio(Municipio municipio) {
-        this.municipio = municipio.getMunicipio();
-        this.dados = municipio.getDados();
+    public void setDeMunicipio(Municipio m) {
+        this.municipio = m.getMunicipio();
+        this.dados = m.getDados();
     }
 
     @Override
     public void criaPaginanoPool() {
-        System.out.println("0i");
+        ;
     }
     }
-
-
-

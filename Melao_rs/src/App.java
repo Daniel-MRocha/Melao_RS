@@ -1,4 +1,5 @@
 import cidades.Municipio;
+import relatorios.I_htmlBuilder;
 import relatorios.PaginaHtml;
 import relatorios.Relatorio;
 
@@ -41,8 +42,10 @@ public class App {
             Relatorio rel = new Relatorio();
             rel.criaDiretorio();
 
-
-
+            I_htmlBuilder i_B = new PaginaHtml();
+            i_B.setDeMunicipio(teste);
+            i_B.criaPaginanoPool();
+            System.out.println(i_B.toString());
         }catch (IOException e){
             System.out.println("erro");
         }
