@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Melao_rs:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Melao_rs_jar</output-path>
+    <root id="archive" name="Melao_rs.jar">
+      <element id="module-output" name="Melao_rs" />
+    </root>
+  </artifact>
+</component>

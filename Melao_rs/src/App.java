@@ -39,12 +39,12 @@ public class App {
             Relatorio montaDiretorio = new Relatorio();
             montaDiretorio.criaDiretorio();
 
-            muniList.stream()
-                    .forEach(municipio ->{
-                        PaginaHtml pg = new PaginaHtml();
-                        pg.setMunicipio(municipio);
-                        pg.criaArquivoPagina();
-                    });
+           // muniList.stream()
+             //       .forEach(municipio ->{
+           //             PaginaHtml pg = new PaginaHtml();
+            //            pg.setMunicipio(municipio);
+            //            pg.criaArquivoPagina();
+             //       });
 
             long fim = System.currentTimeMillis();
             System.out.println("Operação concluida em " + (fim - agora) + " milisegundos");
