@@ -3,6 +3,7 @@ import relatorios.PaginaHtml;
 import relatorios.Relatorio;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +18,10 @@ public class App {
         System.out.println("Gerando relatórios em html---------||");
 
         Path arquivo = Path.of("./dee-1738.csv");
-        BufferedReader br = new BufferedReader(new FileReader(arquivo.toFile()));
+        FileInputStream fi = new FileInputStream(arquivo.toFile());
+        InputStreamReader isr = new InputStreamReader(fi, StandardCharsets.UTF_8);
+        BufferedReader br = new BufferedReader(isr);
+
         br.readLine();
 
         List<Municipio> muniList = new ArrayList<>();
