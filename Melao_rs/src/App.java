@@ -16,14 +16,13 @@ public class App {
         System.out.println("--------------");
         System.out.println("Gerando relatórios em html---------||");
 
-        Path arquivo = Path.of("src/recurso/dee-1738_melao.csv");
+        Path arquivo = Path.of("./dee-1738.csv");
         BufferedReader br = new BufferedReader(new FileReader(arquivo.toFile()));
         br.readLine();
 
         List<Municipio> muniList = new ArrayList<>();
         try {
             String[] cab = trataCab(br);
-
 
             String auxLinhas = br.readLine();
             while(auxLinhas!=null){
@@ -39,12 +38,12 @@ public class App {
             Relatorio montaDiretorio = new Relatorio();
             montaDiretorio.criaDiretorio();
 
-           // muniList.stream()
-             //       .forEach(municipio ->{
-           //             PaginaHtml pg = new PaginaHtml();
-            //            pg.setMunicipio(municipio);
-            //            pg.criaArquivoPagina();
-             //       });
+            muniList.stream()
+                    .forEach(municipio ->{
+                        PaginaHtml pg = new PaginaHtml();
+                        pg.setMunicipio(municipio);
+                        pg.criaArquivoPagina();
+                    });
 
             long fim = System.currentTimeMillis();
             System.out.println("Operação concluida em " + (fim - agora) + " milisegundos");
@@ -52,7 +51,7 @@ public class App {
         }catch (IOException e){
             System.out.println("erro");
         }
-        }
+    }
 
 
 
