@@ -4,9 +4,11 @@ import cidades.Municipio;
 
 
 import java.io.FileWriter;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.text.DecimalFormat;
+import java.util.Locale;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -15,6 +17,9 @@ public class PaginaHtml{
     private String municipio;
     private Map<String, String> dados;
     private String estruturaHtml;
+
+
+
 
 
     public void setMunicipio(Municipio mun) {
@@ -72,20 +77,21 @@ public class PaginaHtml{
                     <meta name="Author" content="Daniel Machado da rocha">
                     """
                 + "<title>" + this.municipio + "</title>" +
-                """ 
-                        </head>
-                        """
-                + montaCss() +
-
                 """
+                """
+                + montaCss() +
+                """
+                        </head>
+                """ +
+                """ 
                         <body>
                                <main>
-                               """
-                + "<Span id=\"municipio\"><h2>" + this.municipio + "</h2></Span>" +
+                """
+                + "<Span id=\"municipio\">" + this.municipio + "</Span>" +
                 """
                                    <h4>Dados da cultura de melão no período de 1974 à 2021</h4>
                                    <section id="dados">
-                        """
+                """
                 + dadosDispostos() +
                 """
                                  </section>

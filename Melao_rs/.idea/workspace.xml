@@ -12,6 +12,7 @@
     <list default="true" id="a7a11dae-ce16-4289-b4db-816b165ebc9a" name="Changes" comment="Limpeza das aspas duplas nos dados">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/relatorios/PaginaHtml.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/relatorios/PaginaHtml.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
