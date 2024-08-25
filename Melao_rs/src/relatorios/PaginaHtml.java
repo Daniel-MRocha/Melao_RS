@@ -158,7 +158,8 @@ public class PaginaHtml{
                         margin: 10px;
                     }
                                 
-                    #municipio > h2{
+                    #municipio{
+                        font-size: 2em;
                         text-decoration: dotted;
                         color: rgb(21, 103, 21);
                     }
@@ -236,12 +237,14 @@ public class PaginaHtml{
                 .map(Integer::parseInt)
                 .collect(Collectors.summarizingInt(ano -> ano));
 
-        var media = estatisticas.getAverage();
+        double media = estatisticas.getAverage();
+        int maxPorAno = (anosCultivados>0)?estatisticas.getMax():0;
+        int minPorAno = (anosCultivados>0)?estatisticas.getMin():0;
 
         sb.append("<span class=\"estatisticaLabel\">Quantidade total de hectares<span class=\"estatisticas\">" + estatisticas.getSum() + "</span></span>");
         sb.append("<span class=\"estatisticaLabel\">Quantidade de anos cultivados<span class=\"estatisticas\">" + anosCultivados + "</span></span>");
-        sb.append("<span class=\"estatisticaLabel\">Maior quantidade em 1 ano<span class=\"estatisticas\">" + estatisticas.getMax() + "</span></span>");
-        sb.append("<span class=\"estatisticaLabel\">Menor quantidade em 1 ano<span class=\"estatisticas\">" + estatisticas.getMin() + "</span></span>");
+        sb.append("<span class=\"estatisticaLabel\">Maior quantidade em 1 ano<span class=\"estatisticas\">" + maxPorAno + "</span></span>");
+        sb.append("<span class=\"estatisticaLabel\">Menor quantidade em 1 ano<span class=\"estatisticas\">" + minPorAno + "</span></span>");
         sb.append("<span class=\"estatisticaLabel\">Media (em anos plantados)<span class=\"estatisticas\">" + df.format(media) + "</span></span>");
 
         return sb.toString();
