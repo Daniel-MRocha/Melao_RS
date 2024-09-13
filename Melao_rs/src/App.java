@@ -18,7 +18,7 @@ public class App {
         System.out.println("--------------");
         System.out.println("Gerando relatórios em html---------||");
 
-        Path arquivo = Path.of("./dee-1738.csv");
+        Path arquivo = Path.of("src/dee-1738.csv");
         FileInputStream fi = new FileInputStream(arquivo.toFile());
         InputStreamReader isr = new InputStreamReader(fi, StandardCharsets.UTF_8);
         BufferedReader br = new BufferedReader(isr);
