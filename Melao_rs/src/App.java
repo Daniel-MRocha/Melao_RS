@@ -2,9 +2,11 @@ import cidades.Municipio;
 import relatorios.PaginaHtml;
 import relatorios.Relatorio;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,9 +19,7 @@ public class App {
         System.out.println("Dados do melão");
         System.out.println("--------------");
         System.out.println("Gerando relatórios em html---------||");
-
-        Path arquivo = Path.of("src/dee-1738.csv");
-        FileInputStream fi = new FileInputStream(arquivo.toFile());
+        InputStream fi = App.class.getResourceAsStream("dee-1738.csv");
         InputStreamReader isr = new InputStreamReader(fi, StandardCharsets.UTF_8);
         BufferedReader br = new BufferedReader(isr);
 

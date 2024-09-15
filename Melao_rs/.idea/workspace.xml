@@ -10,7 +10,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7a11dae-ce16-4289-b4db-816b165ebc9a" name="Changes" comment="Limpeza das aspas duplas nos dados">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Melao_rs.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Melao_rs.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dee-1738.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Melao_rs/App.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Melao_rs/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Melao_rs/cidades/Municipio.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Melao_rs/dee-1738.csv" beforeDir="false" afterPath="$PROJECT_DIR$/resources/dee-1738.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Melao_rs/recurso/melaoBackground2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Melao_rs/relatorios/PaginaHtml.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Melao_rs/relatorios/Relatorio.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dee-1738.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +58,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Daniel M/Documents/DataCienceRs/Melao_rs/out/artifacts/Melao_rs_jar&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
@@ -57,6 +69,8 @@
       <recent name="C:\Users\Daniel M\Documents\DataCienceRs\Melao_rs\src\recurso" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Daniel M\Documents\DataCienceRs\Melao_rs\resousers" />
+      <recent name="C:\Users\Daniel M\Documents\DataCienceRs\Melao_rs\src" />
       <recent name="C:\Users\Daniel M\Documents\DataCienceRs\Melao_rs" />
     </key>
   </component>
@@ -81,8 +95,38 @@
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="7058f043-d291-4f93-9e09-60de659c4028" value="TOOL_WINDOW" />
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
+        <entry key="7058f043-d291-4f93-9e09-60de659c4028">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:C:/Users/Daniel M/Documents/DataCienceRs/Melao_rs" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
             <State />
